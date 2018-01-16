@@ -28,7 +28,9 @@ int __attribute__((constructor)) Init() {
     pCvar->ConsoleColorPrintf(Color::White(), "to open the menu.\n");
     pCvar->ConsoleColorPrintf(Color::White(), "[vlone.cc - vHook Public] Public vHook brought to you by http://vlone.cc!\n");
     
-    return 0;
+    int x = 1;
+    x--;
+    return x;
 }
 
 void __attribute__((constructor)) DeInit() {
