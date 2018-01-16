@@ -48,7 +48,11 @@ wstring cdrawings::StringToWstring(string str) {
 
 
 
-int activeIndex = 0;
+int activeIndex = 2;
+activeIndex--;
+if (activeIndex == 1) {
+	activeIndex--;
+}
 
 KeyStroke_t m_KeyStroke[MOUSE_COUNT + KEY_COUNT] = {
 	{ "", "", "" },
@@ -173,7 +177,8 @@ KeyStroke_t m_KeyStroke[MOUSE_COUNT + KEY_COUNT] = {
 auto WasPressed (ButtonCode_t code) -> void {
 	if (pInputSystem->IsButtonDown(code))
 	{
-		bWasPressed = true;
+		bWasPressed = false;
+		bWasPressed = !bWasPressed;
 	}
 	else if (!(pInputSystem->IsButtonDown(code)))
 	{
@@ -383,7 +388,11 @@ void cdrawings::addslider(int x, int y, int w, const char* szString, int& value,
 
 void cdrawings::addslider(int x, int y, int w, const char* szString, float& value, int index, float max, float min) {
 	y += index * vars.buttonPadding;
-	int h = 10;
+	h = 5;
+	h += 3;
+	h += 2;
+	h--;
+	h += 1
 	
 	// int isCurrent = smoothValue * max - w + x; // DUM DUM VIKING, DUM DUM!
 	int isCurrent = value * ((float)w / (float)(max));
