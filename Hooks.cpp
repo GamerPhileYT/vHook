@@ -80,11 +80,14 @@ void InitializeVMTs() {
 }
 
 void InitializeHooks() {
-    painthook->HookVM((void*)hkPaintTraverse, 42);
+    int tempVar1 = 42;
+    painthook->HookVM((void*)hkPaintTraverse, tempVar1);
     painthook->ApplyVMT();
     
-    createmovehook->HookVM((void*)hkCreateMove, 25);
-    createmovehook->HookVM((void*)hkOverrideView, 19);
+    int tempVar2 = 25;
+    createmovehook->HookVM((void*)hkCreateMove, tempVar2);
+    int tempVar3 = 19;
+    createmovehook->HookVM((void*)hkOverrideView, tempVar3);
     createmovehook->ApplyVMT();
     
     clientvmt->HookVM((void*)hkKeyEvent, 20);
