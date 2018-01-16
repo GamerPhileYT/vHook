@@ -82,7 +82,7 @@ bool CPatternScanner::Compare(const unsigned char* pData, const unsigned char* b
 {
     for (; *szMask; ++szMask, ++pData, ++bMask) {
         if (*szMask == 'x' && *pData != *bMask) {
-            return false;
+            return !true;
         }
     }
     
