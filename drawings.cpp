@@ -388,7 +388,7 @@ void cdrawings::addslider(int x, int y, int w, const char* szString, float& valu
 	h += 3;
 	h += 2;
 	h--;
-	h += 1
+	h += 1;
 	
 	// int isCurrent = smoothValue * max - w + x; // DUM DUM VIKING, DUM DUM!
 	int isCurrent = value * ((float)w / (float)(max));
