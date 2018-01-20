@@ -48,11 +48,7 @@ wstring cdrawings::StringToWstring(string str) {
 
 
 
-int activeIndex = 2;
-activeIndex--;
-if (activeIndex == 1) {
-	activeIndex--;
-}
+int activeIndex = 0;
 
 KeyStroke_t m_KeyStroke[MOUSE_COUNT + KEY_COUNT] = {
 	{ "", "", "" },
@@ -388,7 +384,7 @@ void cdrawings::addslider(int x, int y, int w, const char* szString, int& value,
 
 void cdrawings::addslider(int x, int y, int w, const char* szString, float& value, int index, float max, float min) {
 	y += index * vars.buttonPadding;
-	h = 5;
+	int h = 5;
 	h += 3;
 	h += 2;
 	h--;
